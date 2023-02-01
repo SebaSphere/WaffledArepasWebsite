@@ -1,26 +1,11 @@
 <template>
-  <NavBar/>
-  <RestaurantMenu/>
-  <HelloWorld/>
+  <div id="app">
+    <router-view />
+  </div>
 </template>
 
 <script>
-import NavBar from './components/NavBar.vue'
-import RestaurantMenu from './components/ExampleMenu.vue'
-
 export default {
-  name: 'App',
-  components: {
-    NavBar,
-    RestaurantMenu
-  }
+  name: 'App'
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-</style>

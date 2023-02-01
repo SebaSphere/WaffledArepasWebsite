@@ -14,7 +14,7 @@
 export default {
   data () {
     return {
-      restaurantName: 'The Tasty Kitchen',
+      restaurantName: 'meowwwwwww kitchen',
       menuItems: [
         { id: 1, name: 'Pizza', price: 12.99 },
         { id: 2, name: 'Pasta', price: 15.99 },
