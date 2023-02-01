@@ -24,23 +24,3 @@ export default {
   }
 }
 </script>
-
-<style>
-#app {
-  text-align: center;
-}
-
-h1 {
-  font-size: 2em;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  font-size: 1.2em;
-  margin: 10px 0;
-}
-</style>
