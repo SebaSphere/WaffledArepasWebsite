@@ -1,8 +1,10 @@
-<!-- TODO: find out why navbar is delayed to load -->
 <template>
   <div class="flex items-center justify-between p-4 bg-dark-brown text-white">
       <nav>
-        <!-- TODO: replace logo with a proper commissioned one instead of AI generated -->
+        <!--
+        TODO: replace logo with a proper commissioned one instead of AI generated
+        TODO: make sure logo is a .svg
+        -->
         <ul class="flex items-center">
           <li class="mr-8">
             <img
@@ -13,7 +15,7 @@
           </li>
           <div class="grid grid-cols-4 content-start">
             <li v-for="item in items" :key="item.text">
-              <a :href="item.url" class="font-medium">{{ item.text }}</a>
+              <router-link :to="item.url" class="font-medium">{{ item.text }}</router-link>
             </li>
           </div>
         </ul>
@@ -27,7 +29,7 @@ export default {
   data() {
     return {
       items: [
-        { text: 'HOME', url: '' },
+        { text: 'HOME', url: '/' },
         { text: 'MENU', url: '/menu' },
         { text: 'ABOUT', url: '/about' },
         { text: 'CATERING', url: '/catering' },
