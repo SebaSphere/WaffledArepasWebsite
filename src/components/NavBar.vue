@@ -13,7 +13,8 @@
                 class="w-20 object-cover rounded-full"
             >
           </li>
-          <div class="grid grid-cols-4 content-start">
+          <!-- TODO: make navbar mobile friendly, add hamburger menu -->
+          <div class="space-x-[15%] hidden md:flex">
             <li v-for="item in items" :key="item.text">
               <router-link :to="item.url" class="font-medium">{{ item.text }}</router-link>
             </li>
@@ -24,19 +25,19 @@
 </template>
 
 <script>
-export default {
-  name: "NavBar",
-  data() {
-    return {
-      items: [
-        { text: 'HOME', url: '/' },
-        { text: 'MENU', url: '/menu' },
-        { text: 'ABOUT', url: '/about' },
-        { text: 'CATERING', url: '/catering' },
-      ],
-    };
-  },
-};
+  export default {
+    name: "NavBar",
+    data() {
+      return {
+        items: [
+          { text: 'HOME', url: '/' },
+          { text: 'MENU', url: '/menu' },
+          { text: 'ABOUT', url: '/about' },
+          { text: 'CATERING', url: '/catering' },
+        ],
+      };
+    },
+  };
 </script>
 
 <style>

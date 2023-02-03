@@ -1,6 +1,6 @@
 import '../index.css'
 
-import HomeSlideshowView from "@/views/HomeSlideshowView";
+import HomeView from "@/views/HomeView";
 import AboutView from "@/views/AboutView";
 import MissingPageView from "@/views/MissingPageView";
 
@@ -18,7 +18,7 @@ export const router = createRouter({
         },
         {
             path: '/',
-            component: HomeSlideshowView,
+            component: HomeView,
             name: 'home'
         },
         {

@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed top-0 left-0 w-full h-full flex items-center justify-center">
+  <div class="fixed w-full h-[75%] flex items-center justify-center">
     <div class="text-center text-gray-600">
       <h2 class="text-4xl">Looks like you're lost...</h2>
       <h2 class="text-4xl">return <router-link to="/" class="text-blue-300 hover:text-blue-500 underline">home</router-link>???</h2>

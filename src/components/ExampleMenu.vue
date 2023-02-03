@@ -11,16 +11,16 @@
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      restaurantName: 'meowwwwwww kitchen',
-      menuItems: [
-        { id: 1, name: 'Pizza', price: 12.99 },
-        { id: 2, name: 'Pasta', price: 15.99 },
-        { id: 3, name: 'Steak', price: 20.99 }
-      ]
+  export default {
+    data () {
+      return {
+        restaurantName: 'meowwwwwww kitchen',
+        menuItems: [
+          { id: 1, name: 'Pizza', price: 12.99 },
+          { id: 2, name: 'Pasta', price: 15.99 },
+          { id: 3, name: 'Steak', price: 20.99 }
+        ]
+      }
     }
   }
-}
 </script>
