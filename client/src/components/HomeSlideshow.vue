@@ -1,3 +1,5 @@
+<!-- TODO: at suggestion of my brother, make the slideshow "go big" when you scroll down -->
+<!-- TODO: make slides clickable and go to different:bulb: places on the website with <router-link> -->
 <template>
   <vueper-slides autoplay :dragging-distance="70" prevent-y-scroll :pause-on-hover = true>
     <vueper-slide
