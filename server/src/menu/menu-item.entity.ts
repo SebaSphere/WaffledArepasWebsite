@@ -27,6 +27,4 @@ export class MenuItemEntity extends Model {
 
     // TODO: create a foreign key relationship with a new table called "category"
 
-    // TODO: create a timestamp holding when the table was created and updated
-
 }
