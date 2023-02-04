@@ -13,8 +13,9 @@ export class MenuService {
         return this.menuItemRepository.findAll<MenuItemEntity>();
     }
 
-    getMenu(): string {
-        return 'hello menu';
+    async getMenu(): Promise<string> {
+        const menuItemEntities = await this.getMenuItemEntity();
+        return JSON.stringify(menuItemEntities, null, 2);
     }
 
 }

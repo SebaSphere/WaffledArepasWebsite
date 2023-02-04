@@ -1,5 +1,4 @@
-import { Table, Column, Model, DataType } from 'sequelize-typescript';
-import sequelize from "sequelize";
+import {Table, Column, Model, DataType, HasMany, BelongsTo} from 'sequelize-typescript';
 
 @Table
 export class MenuItemEntity extends Model {

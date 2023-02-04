@@ -7,9 +7,8 @@ export class MenuController {
     constructor(private readonly menuService: MenuService) {}
 
     @Get()
-    getMenu(): string {
-        return this.menuService.getMenu();
+    async getMenu(): Promise<string> {
+        return await this.menuService.getMenu();
     }
-
 
 }
