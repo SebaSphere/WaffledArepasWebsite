@@ -24,4 +24,3 @@ pnpm-debug.log*
 
 # creds that should not be pushed to the github repo
 /credentials
-/server/.env
