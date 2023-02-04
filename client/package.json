@@ -10,8 +10,11 @@
   "dependencies": {
     "@doordash/sdk": "^0.4.6",
     "core-js": "^3.8.3",
+    "express": "^4.18.2",
+    "prerender-node": "^3.5.0",
     "vue": "^3.2.13",
-    "vueperslides": "^3.5.1"
+    "vueperslides": "^3.5.1",
+    "yaml": "^2.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

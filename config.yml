@@ -1,0 +1,4 @@
+# The port used by the serverside
+serverPort: 22802
+# The port used by the clientside
+clientPort: 31603
