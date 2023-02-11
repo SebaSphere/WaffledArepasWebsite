@@ -1,10 +1,10 @@
 <!-- TODO: at suggestion of my brother, make the slideshow "go big" when you scroll down -->
-<!-- TODO: make slides clickable and go to different:bulb: places on the website with <router-link> -->
+<!-- TODO: make slides clickable and go to different places on the website with <router-link> -->
 <template>
   <vueper-slides autoplay :dragging-distance="70" prevent-y-scroll :pause-on-hover = true>
     <vueper-slide
         v-for="(slide, i) in slides"
-        duration="7000"
+        duration=7000
         :key="i"
         :image="slide.image_url"
         class="transform hover:scale-[110%] transition-all duration-300"

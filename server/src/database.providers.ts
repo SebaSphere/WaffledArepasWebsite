@@ -7,7 +7,7 @@ export const databaseProviders = [
         useFactory: async () => {
             const sequelize = new Sequelize({
                 dialect: 'postgres',
-                host: 'localhost',
+                host: 'postgres-database',
                 port: 5432,
                 username: 'postgres',
                 password: 'agoodpassword', // TODO: put this in the creds config + docker up the postgres server
