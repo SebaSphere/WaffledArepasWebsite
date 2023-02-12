@@ -29,6 +29,19 @@ services:
     networks:
       - backend-network
       - middlebridge
+  client:
+    build: ./client
+    container_name: vuejs-frontend
+    hostname: vuejs-frontend
+    ports:
+      - 31603:8080 # external-port:container-port
+    volumes:
+      - ./config.yml:/usr/src/app/config.yml
+      - ./credentials/:/usr/src/app/credentials/
+    depends_on:
+      - server
+    networks:
+      - middlebridge
 volumes:
   database_postgres: {}
 networks:
