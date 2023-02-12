@@ -3,12 +3,13 @@ services:
   postgres-db:
     image: postgres:12.2-alpine
     container_name: postgres-database
+    hostname: postgres-database
     restart: always
     ports:
       - 5432:5432 # external-port:container-port
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=agoodpassword
+      - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
     networks:
       - backend-network
@@ -17,6 +18,7 @@ services:
   server:
     build: ./server
     container_name: nestjs-backend
+    hostname: nestjs-backend
     ports:
       - 22802:22802 # external-port:container-port
     volumes:

@@ -15,5 +15,9 @@ COPY . .
 # Creates a "dist" folder with the production build
 RUN npm run build
 
-# Start the server using the production build
-CMD [ "node", "dist/main.js" ]
+# Download the wait-for-it.sh script
+RUN wget https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh \
+  && chmod +x wait-for-it.sh
+
+# Start the script to wait for the postgres-db container to be ready
+CMD ["./wait-for-it.sh", "postgres-database:5432", "--", "node", "dist/main.js"]

@@ -5,12 +5,13 @@ export const databaseProviders = [
     {
         provide: 'SEQUELIZE',
         useFactory: async () => {
+            // TODO: put this in the creds config
             const sequelize = new Sequelize({
                 dialect: 'postgres',
                 host: 'postgres-database',
                 port: 5432,
                 username: 'postgres',
-                password: 'agoodpassword', // TODO: put this in the creds config + docker up the postgres server
+                password: 'postgres',
                 database: 'postgres',
             });
             sequelize.addModels([MenuItemEntity]);
