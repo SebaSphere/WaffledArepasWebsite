@@ -2,7 +2,7 @@ FROM node:18.13.0 as development
 
 # Create app directory
 ENV NODE_ENV=production
-WORKDIR /usr/src/app/server
+WORKDIR /usr/src/app/client
 
 # Bundle app source
 COPY package*.json ./
@@ -17,4 +17,4 @@ RUN wget https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for
   && chmod +x wait-for-it.sh
 
 # Start the script to wait for the backend container to be ready
-CMD ["./wait-for-it.sh", "nestjs-backend:22802", "--", "yarn", "run", "serve"]
+CMD ["./wait-for-it.sh", "nestjs-backend:22802", "--", "yarn", "run", "debug"]

@@ -22,7 +22,8 @@ services:
     container_name: nestjs-backend
     hostname: nestjs-backend
     ports:
-      - 22802:22802 # external-port:container-port
+      - "22802:22802" # external-port:container-port - server deployment
+      - "4001:9229" # external-port:container-port - server debugging
     volumes:
       - ./config.yml:/usr/src/app/config.yml
       - ./credentials/:/usr/src/app/credentials/
@@ -38,7 +39,8 @@ services:
     container_name: vuejs-frontend
     hostname: vuejs-frontend
     ports:
-      - 31603:8080 # external-port:container-port
+      - "31603:8080" # external-port:container-port - client deployment
+      - "4002:9229" # external-port:container-port - client debugging
     volumes:
       - ./config.yml:/usr/src/app/config.yml
       - ./credentials/:/usr/src/app/credentials/

@@ -15,4 +15,4 @@ RUN wget https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for
   && chmod +x wait-for-it.sh
 
 # Start the script to wait for the postgres-db container to be ready
-CMD ["./wait-for-it.sh", "postgres-database:5432", "--", "yarn", "run", "start"]
+CMD ["./wait-for-it.sh", "postgres-database:5432", "--", "yarn", "run", "start:debug-inspect"]
