@@ -25,6 +25,7 @@ services:
       - "22802:22802" # external-port:container-port - server deployment
       - "4001:9229" # external-port:container-port - server debugging
     volumes:
+      - ./server/src:/usr/src/app/server/src
       - ./config.yml:/usr/src/app/config.yml
       - ./credentials/:/usr/src/app/credentials/
     depends_on:

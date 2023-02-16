@@ -10,7 +10,7 @@ export class MenuService {
     ) {}
 
     async getMenuItemEntity(): Promise<MenuItemEntity[]> {
-        console.log("meow")
+        console.log("med13")
         return this.menuItemRepository.findAll<MenuItemEntity>();
     }
 
