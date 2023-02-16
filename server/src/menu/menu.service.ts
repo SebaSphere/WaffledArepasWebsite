@@ -1,5 +1,5 @@
 import {Inject, Injectable} from '@nestjs/common';
-import {MenuItemEntity} from "./menu-item.entity";
+import {MenuItemEntity} from "./entities/menu-item.entity";
 import {MenuItems} from "../constants";
 
 @Injectable()

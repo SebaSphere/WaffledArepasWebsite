@@ -1,4 +1,4 @@
-import {MenuItemEntity} from "./menu-item.entity";
+import {MenuItemEntity} from "./entities/menu-item.entity";
 import {MenuItems} from "../constants";
 
 export const menuItemsProviders = [

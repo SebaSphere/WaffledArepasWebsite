@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize-typescript';
-import { MenuItemEntity } from '../menu/menu-item.entity';
+import { MenuItemEntity } from '../menu/entities/menu-item.entity';
 import {DatabaseProvider} from "../constants";
 
 export const databaseProviders = [
