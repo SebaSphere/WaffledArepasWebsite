@@ -1,11 +1,12 @@
 import {Inject, Injectable} from '@nestjs/common';
 import {MenuItemEntity} from "./menu-item.entity";
+import {MenuItems} from "../constants";
 
 @Injectable()
 export class MenuService {
 
     constructor(
-        @Inject('MENU_ITEM_REPOSITORY')
+        @Inject(MenuItems.MENU_ITEM_REPOSITORY)
         private menuItemRepository: typeof MenuItemEntity
     ) {}
 
