@@ -1,6 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
 import { MenuItemEntity } from '../menu/entities/menu-item.entity';
 import {DatabaseProvider} from "../constants";
+import {CategoryEntity} from "../category/entities/category.entity";
 
 export const databaseProviders = [
     {
@@ -15,7 +16,7 @@ export const databaseProviders = [
                 password: 'postgres',
                 database: 'postgres',
             });
-            sequelize.addModels([MenuItemEntity]);
+            sequelize.addModels([MenuItemEntity, CategoryEntity]);
             await sequelize.sync();
             return sequelize;
         },

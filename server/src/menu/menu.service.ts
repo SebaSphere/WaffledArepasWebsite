@@ -10,12 +10,8 @@ export class MenuService {
         private menuItemRepository: typeof MenuItemEntity
     ) {}
 
-    async getMenuItemEntity(): Promise<MenuItemEntity[]> {
-        return this.menuItemRepository.findAll<MenuItemEntity>();
-    }
-
     async getMenu(): Promise<string> {
-        const menuItemEntities = await this.getMenuItemEntity();
+        const menuItemEntities = await this.menuItemRepository.findAll<MenuItemEntity>();
         return JSON.stringify(menuItemEntities, null, 2);
     }
 

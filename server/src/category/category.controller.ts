@@ -13,8 +13,8 @@ export class CategoryController {
   }
 
   @Get()
-  findAll() {
-    return this.categoryService.findAll();
+  async findAll(): Promise<string> {
+    return await this.categoryService.findAll();
   }
 
   @Get(':id')

@@ -1,4 +1,5 @@
-import {Table, Column, Model, DataType, HasMany, BelongsTo} from 'sequelize-typescript';
+import {Table, Column, Model, DataType, ForeignKey} from 'sequelize-typescript';
+import {CategoryEntity} from "../../category/entities/category.entity";
 
 @Table
 export class MenuItemEntity extends Model {
@@ -9,6 +10,13 @@ export class MenuItemEntity extends Model {
         primaryKey: true
     })
     product_id: string; // uuid, primary key
+
+    @ForeignKey(() => CategoryEntity)
+    @Column({
+        type: DataType.UUID,
+        defaultValue: null
+    })
+    category_id: string; // uuid, links the category foreign key
 
     @Column
     product_name: string;
@@ -22,8 +30,5 @@ export class MenuItemEntity extends Model {
     price: number // price in USD
 
     @Column
-    image_url: string // url holding a image of the menu item
-
-    // TODO: create a foreign key relationship with a new table called "category"
-
+    image_url: string // url holding an image of the menu item
 }

@@ -6,16 +6,13 @@ import MissingPageView from "@/views/MissingPageView";
 
 
 import { createRouter, createWebHistory } from 'vue-router'
+import AdminLoginView from "@/views/AdminLoginView.vue";
+import NavBar from "@/components/NavBar.vue";
 
 
 export const router = createRouter({
     history: createWebHistory(),
     routes: [
-        {
-            path: '/:pathMatch(.*)*',
-            name: 'NotFound',
-            component: MissingPageView
-        },
         {
             path: '/',
             component: HomeView,
@@ -26,6 +23,23 @@ export const router = createRouter({
             component: AboutView,
             alias: '/about',
             name: 'about'
+        },
+        {
+            path: '/admin',
+            redirect: '/admin/login',
+            children: [
+                {
+                    path: '/admin/login',
+                    name: 'login',
+                    component: NavBar // testing component
+                }
+            ],
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'NotFound',
+            component: MissingPageView
         }
     ],
+    strict: true
 })
