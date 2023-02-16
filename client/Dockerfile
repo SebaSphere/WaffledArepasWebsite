@@ -1,6 +1,4 @@
 FROM node:18.14.0 as development
-# used for file debugging
-ENV CHOKIDAR_USEPOLLING=true
 # Create app directory
 WORKDIR /usr/src/app/client
 # Download the wait-for-it.sh script
