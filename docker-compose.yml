@@ -43,6 +43,7 @@ services:
       - "31603:8080" # external-port:container-port - client deployment
       - "4002:9229" # external-port:container-port - client debugging
     volumes:
+      - ./client/src:/usr/src/app/client/src
       - ./config.yml:/usr/src/app/config.yml
       - ./credentials/:/usr/src/app/credentials/
     depends_on:

@@ -24,3 +24,7 @@ pnpm-debug.log*
 
 # creds that should not be pushed to the github repo
 /credentials
+
+# ignore yarn.lock
+/server/yarn.lock
+/client/yarn.lock
