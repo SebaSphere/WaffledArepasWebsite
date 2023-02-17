@@ -59,9 +59,6 @@ services:
       - "traefik.http.routers.client.rule=Host(`127.0.0.1`)"
       - "traefik.http.routers.client.entrypoints=web"
       - "traefik.http.services.client.loadbalancer.server.port=8080"
-      - "traefik.http.middlewares.client-replacepath.replacepathregex.regex=^/$"
-      - "traefik.http.middlewares.client-replacepath.replacepathregex.replacement=/"
-      - "traefik.http.routers.client.middlewares=client-replacepath"
     volumes:
       - ./client/src:/usr/src/app/client/src
       - ./config.yml:/usr/src/app/config.yml
