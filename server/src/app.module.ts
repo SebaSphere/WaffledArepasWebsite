@@ -3,7 +3,10 @@ import {MenuModule} from "./menu/menu.module";
 import { CategoryModule } from './category/category.module';
 
 @Module({
-  imports: [MenuModule, CategoryModule],
+  imports: [
+      MenuModule,
+      CategoryModule
+  ],
   controllers: [],
   providers: []
 })
