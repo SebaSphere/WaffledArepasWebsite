@@ -6,17 +6,12 @@ import MissingPageView from "@/views/MissingPageView";
 
 
 import { createRouter, createWebHistory } from 'vue-router'
-import AdminLoginView from "@/views/AdminLoginView.vue";
 import NavBar from "@/components/NavBar.vue";
 
 
 export const router = createRouter({
     history: createWebHistory(),
     routes: [
-        {
-            path: '/*',
-            redirect: { name: 'route-name' }
-        },
         {
             path: '/',
             component: HomeView,
@@ -44,6 +39,5 @@ export const router = createRouter({
             name: 'NotFound',
             component: MissingPageView
         }
-    ],
-    strict: true
+    ]
 })

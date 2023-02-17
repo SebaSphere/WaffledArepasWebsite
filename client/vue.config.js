@@ -6,7 +6,7 @@ const YAML = require('yaml')
 module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave: false,
-  publicPath: '',
+  publicPath: '/',
   configureWebpack: {
     devServer: {
       historyApiFallback: true
