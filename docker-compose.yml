@@ -6,6 +6,8 @@ services:
     hostname: nginx
     ports:
       - "32163:8080"
+    depends_on:
+      - client
     networks:
       - middlebridge
     volumes:
