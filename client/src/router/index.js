@@ -29,7 +29,7 @@ export const router = createRouter({
             redirect: '/admin/login',
             children: [
                 {
-                    path: '/admin/login',
+                    path: 'login',
                     name: 'login',
                     component: NavBar // testing component
                 }

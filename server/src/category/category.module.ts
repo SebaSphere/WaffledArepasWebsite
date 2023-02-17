@@ -5,7 +5,7 @@ import {categoryProviders} from "./category.providers";
 import {DatabaseModule} from "../database/database.module";
 
 @Module({
-    imports: [DatabaseModule],
+    imports: [],
     controllers: [CategoryController],
     providers: [
         CategoryService,

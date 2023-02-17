@@ -5,7 +5,7 @@ import { menuItemsProviders } from './menu-items.providers';
 import { DatabaseModule } from '../database/database.module';
 
 @Module({
-    imports: [DatabaseModule],
+    imports: [],
     controllers: [MenuController],
     providers: [
         MenuService,

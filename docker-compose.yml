@@ -1,12 +1,27 @@
 version: '3.7'
 services:
+  reverse-proxy:
+    # The official v2 Traefik docker image
+    image: traefik:v2.9
+    # Enables the web UI and tells Traefik to listen to docker
+    command: --api.insecure=true --providers.docker --entrypoints.web.address=:80
+    ports:
+      # The HTTP port
+      - "80:80"
+      # The Web UI (enabled by --api.insecure=true)
+      - "8080:8080"
+    networks:
+      - middlebridge
+    volumes:
+      # So that Traefik can listen to the Docker events
+      - /var/run/docker.sock:/var/run/docker.sock
   postgres-db:
     image: postgres:12.2-alpine
     container_name: postgres-database
     hostname: postgres-database
     restart: always
     ports:
-      - 5432:5432 # external-port:container-port
+      - "5432:5432" # external-port:container-port
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
@@ -39,9 +54,14 @@ services:
       target: development
     container_name: vuejs-frontend
     hostname: vuejs-frontend
-    ports:
-      - "31603:8080" # external-port:container-port - client deployment
-      - "4002:9229" # external-port:container-port - client debugging
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.client.rule=Host(`127.0.0.1`)"
+      - "traefik.http.routers.client.entrypoints=web"
+      - "traefik.http.services.client.loadbalancer.server.port=8080"
+      - "traefik.http.middlewares.client-replacepath.replacepathregex.regex=^/$"
+      - "traefik.http.middlewares.client-replacepath.replacepathregex.replacement=/"
+      - "traefik.http.routers.client.middlewares=client-replacepath"
     volumes:
       - ./client/src:/usr/src/app/client/src
       - ./config.yml:/usr/src/app/config.yml
