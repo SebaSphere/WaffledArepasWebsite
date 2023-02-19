@@ -1,32 +1,5 @@
 version: '3.7'
 services:
-  nginx:
-    image: nginx:latest
-    container_name: nginx
-    hostname: nginx
-    ports:
-      - "32163:8080"
-    depends_on:
-      - client
-    networks:
-      - middlebridge
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-#  reverse-proxy:
-#    # The official v2 Traefik docker image
-#    image: traefik:v2.9
-#    # Enables the web UI and tells Traefik to listen to docker
-#    command: --api.insecure=true --providers.docker --entrypoints.web.address=:80
-#    ports:
-#      # The HTTP port
-#      - "80:80"
-#      # The Web UI (enabled by --api.insecure=true)
-#      - "8080:8080"
-#    networks:
-#      - middlebridge
-#    volumes:
-#      # So that Traefik can listen to the Docker events
-#      - /var/run/docker.sock:/var/run/docker.sock
   postgres-db:
     image: postgres:12.2-alpine
     container_name: postgres-database
@@ -50,7 +23,6 @@ services:
     hostname: nestjs-backend
     ports:
       - "22802:22802" # external-port:container-port - server deployment
-      - "4001:9229" # external-port:container-port - server debugging
     volumes:
       - ./server/src:/usr/src/app/server/src
       - ./config.yml:/usr/src/app/config.yml
@@ -67,16 +39,10 @@ services:
     container_name: vuejs-frontend
     hostname: vuejs-frontend
     ports:
-      - "31603:8080" # external-port:container-port - server deployment
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.client.rule=Host(`127.0.0.1`)"
-      - "traefik.http.routers.client.entrypoints=web"
-      - "traefik.http.services.client.loadbalancer.server.port=8080"
-      - "traefik.http.middlewares.client-replacepath.replacepathregex.regex=^/admin/(.*)"
-      - "traefik.http.middlewares.client-replacepath.replacepathregex.replacement=/$1"
+      - "31603:8080" # external-port:container-port - client deployment
     volumes:
       - ./client/src:/usr/src/app/client/src
+      - ./client/*.js:/usr/src/app/client/*.js
       - ./config.yml:/usr/src/app/config.yml
       - ./credentials/:/usr/src/app/credentials/
       - vuejs_dist:/usr/src/app/client
