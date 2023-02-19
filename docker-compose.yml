@@ -42,7 +42,11 @@ services:
       - "31603:8080" # external-port:container-port - client deployment
     volumes:
       - ./client/src:/usr/src/app/client/src
-      - ./client/*.js:/usr/src/app/client/*.js
+      - ./client/vue.config.js:/usr/src/app/client/vue.config.js
+      - ./client/vite.config.js:/usr/src/app/client/vite.config.js
+      - ./client/tailwind.config.js:/usr/src/app/client/tailwind.config.js
+      - ./client/postcss.config.js:/usr/src/app/client/postcss.config.js
+      - ./client/babel.config.js:/usr/src/app/client/babel.config.js
       - ./config.yml:/usr/src/app/config.yml
       - ./credentials/:/usr/src/app/credentials/
       - vuejs_dist:/usr/src/app/client
