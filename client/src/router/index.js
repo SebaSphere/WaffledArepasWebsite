@@ -2,11 +2,11 @@ import '../index.css'
 
 import HomeView from "@/views/HomeView";
 import AboutView from "@/views/AboutView";
-import MissingPageView from "@/views/MissingPageView";
+import MissingPageView from "@/views/MissingPageView.vue";
+import LoginScreenView from "@/views/LoginScreenView.vue";
 
 
 import { createRouter, createWebHistory } from 'vue-router'
-import NavBar from "@/components/NavBar.vue";
 
 
 export const router = createRouter({
@@ -30,7 +30,7 @@ export const router = createRouter({
                 {
                     path: 'login',
                     name: 'login',
-                    component: NavBar // testing component
+                    component: LoginScreenView // testing component
                 }
             ],
         },
