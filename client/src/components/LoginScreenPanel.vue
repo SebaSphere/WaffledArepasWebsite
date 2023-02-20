@@ -44,7 +44,6 @@ export default {
   },
   methods: {
     async handleLogin() {
-      const bcrypt = require('bcryptjs');
       try {
         // Call your authentication API endpoint here
         // Pass in this.email and this.password as the credentials
